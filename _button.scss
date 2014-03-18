@@ -1,0 +1,130 @@
+/*** @export "button-component" css */
+/**
+ * Button Component
+ *
+ * 1. import the button-object dependency.
+ */
+@import 'path/to/bower_components/_o-button.scss';     /* 1 */
+
+@import '_button-component.scss';
+
+/*** @export "button-structure" css */
+/**
+ * Button Structure
+ *
+ */
+@if ($btnSmall == true) {
+  .btn--structure__small {
+    @include componentConstructor($btn--structure__small);
+  }
+}
+
+@if ($btnMedium == true) {
+  .btn--structure__medium {
+    @include componentConstructor($btn--structure__medium);
+  }
+}
+
+@if ($btnLarge == true) {
+  .btn--structure__large {
+    @include componentConstructor($btn--structure__large);
+  }
+}
+
+@if ($btnTouch == true) {
+  .btn--structure__touch {
+    @extend .btn--structure__large;
+    @include componentConstructor($btn--structure__touch);
+  }
+}
+
+/*** @export "button-skin" css */
+/**
+ * Button Skin
+ *
+ */
+@if ($btnDefault == true) {
+  .btn--skin__default {
+    @include componentConstructor($btn--skin__default);
+    &:hover { 
+      @include componentConstructor($btn--skin__default__hover);
+    }
+    &:active,
+    &.active {
+      @include componentConstructor($btn--skin__default__active);
+    }
+    &.disabled,
+    &[disabled] {
+      @include componentConstructor($btn--skin__default__disabled);
+    }
+  }
+}
+
+@if ($btnPositive == true) {
+  .btn--skin__positive {
+    @include componentConstructor($btn--skin__positive);
+    &:hover { 
+      @include componentConstructor($btn--skin__positive__hover);
+    }
+    &:active,
+    &.active {
+      @include componentConstructor($btn--skin__positive__active);
+    }
+    &.disabled,
+    &[disabled] {
+      @include componentConstructor($btn--skin__positive__disabled);
+    }
+  }
+}
+
+@if ($btnNegative == true) {
+  .btn--skin__negative {
+    @include componentConstructor($btn--skin__negative);
+    &:hover { 
+      @include componentConstructor($btn--skin__negative__hover);
+    }
+    &:active,
+    &.active {
+      @include componentConstructor($btn--skin__negative__active);
+    }
+    &.disabled,
+    &[disabled] {
+      @include componentConstructor($btn--skin__negative__disabled);
+    }
+  }
+}
+
+@if ($btnPrimary == true) {
+  .btn--skin__primary {
+    @include componentConstructor($btn--skin__primary);
+    &:hover { 
+      @include componentConstructor($btn--skin__primary__hover);
+    }
+    &:active,
+    &.active {
+      @include componentConstructor($btn--skin__primary__active);
+    }
+    &.disabled,
+    &[disabled] {
+      @include componentConstructor($btn--skin__primary__disabled);
+    }
+  }
+}
+
+@if ($btnSecondary == true) {
+  .btn--skin__secondary {
+    @include componentConstructor($btn--skin__secondary);
+    &:hover { 
+      @include componentConstructor($btn--skin__secondary__hover);
+    }
+    &:active,
+    &.active {
+      @include componentConstructor($btn--skin__secondary__active);
+    }
+    &.disabled,
+    &[disabled] {
+      @include componentConstructor($btn--skin__secondary__disabled);
+    }
+  }
+}
+
