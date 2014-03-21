@@ -1,16 +1,16 @@
 /*** @export "button-structure" css */
 
 // enable/disable button structures
-$btnSmall == true;
-$btnMedium == true;
-$btnLarge == true;
-$btnTouch == true;
+$btnSmall: true;
+$btnMedium: true;
+$btnLarge: true;
+$btnTouch: true;
 // enable/disable button skins
-$btnDefault == true;
-$btnPositive == true;
-$btnNegative == true;
-$btnPrimary == true;
-$btnSecondary == true;
+$btnDefault: true;
+$btnPositive: true;
+$btnNegative: true;
+$btnPrimary: true;
+$btnSecondary: true;
 
 /**
  * Button Structure
@@ -71,8 +71,6 @@ $btn--structure__touch:(
 );
 
 
-
-
 /*** @export "button-skin" css */
 /**
  * Button Skin
@@ -80,93 +78,103 @@ $btn--structure__touch:(
  */
 
 /* Default Button Skin */
-$btn__default--color1:                #B3B3B3;
-$btn__default--color2:                darken($btn__default--color1, 10%);
+$btn--default__color1:                #B3B3B3 !default;
+$btn--default__color2:                darken($btn--default__color1, 10%) !default;
 /* Positive Button Skin */
-$btn__positive--color1:               #5B8737;
-$btn__positive--color2:               darken($btn__positive--color1, 10%);
+$btn--positive__color1:               #5B8737 !default;
+$btn--positive__color2:               darken($btn--positive__color1, 10%) !default;
 /* Negative Button Skin */
-$btn__negative--color1:               #E91C21;
-$btn__negative--color2:               darken($btn__negative--color1, 10%);
+$btn--negative__color1:               #E91C21 !default;
+$btn--negative__color2:               darken($btn--negative__color1, 10%) !default;
 /* Secondary Button Skin */
-$btn__secondary--color1:              white(10%);
-$btn__secondary--color2:              darken($btn__secondary--color1, 10%);
+$btn--secondary__color1:              white(10%) !default;
+$btn--secondary__color2:              darken($btn--secondary__color1, 10%) !default;
+
+
+$btn--skin:(
+  default:(
+  
+  );
+);
 
 /**
  * Default Button Skin
  *
  * override default prototype skin with custom skin styles
  */
+
 $btn--skin__default:(
-  background-color: $btn__default--color1,
+  background-color: $btn--default__color1,
   color: $white,
   border: 1px solid $strong,
-);// hover state styles
-$btn--skin__default__hover:(
-  background-color: $btn__default--color2,
-);// active state styles
-$btn--skin__default__active:(
-  background-color: tint($btn__default--color2, 10%),
-);// disabled state styles
-$btn--skin__default__disabled:(
-  opacity: 0.6,
-  cursor: default,
+  hover-state:(
+    background-color: $btn--default__color2,
+  );
+  active-state:(
+    background-color: tint($btn--default__color2, 10%),
+  );
+  disabled-state:(
+    opacity: 0.6,
+    cursor: default,
+  );
 );
+
 
 /**
  * Positive Button Skin
  */
 $btn--skin__positive:(
-  background-color: $btn__positive--color1,
+  background-color: $btn--positive__color1,
   color: $white,
   border: 1px solid $strong,
-);// hover state styles
-$btn--skin__positive__hover:(
-  background-color: $btn__positive--color2;,
-);// active state styles
-$btn--skin__positive__active:(
-  background-color: tint($btn__positive--color2, 10%),
-);// disabled state styles
-$btn--skin__positive__disabled:(
-  opacity: 0.6,
-  cursor: default,
+  hover-state:(    
+    background-color: $btn--positive__color2,
+  );
+  active-state:(
+    background-color: tint($btn--positive__color2, 10%),
+  );
+  disabled-state:(
+    opacity: 0.6,
+    cursor: default,
+  );
 );
+
 
 /**
  * Negative Button Skin
  */
 $btn--skin__negative:(
-  background-color: $btn__negative--color1,
+  background-color: $btn--negative__color1,
   color: $white,
   border: 1px solid $strong,
-);// hover state styles
-$btn--skin__negative__hover:(
-  background-color: $btn__negative--color2,
-);// active state styles
-$btn--skin__negative__active:(
-  background-color: tint($btn__negative--color2, 10%),
-);// disabled state styles
-$btn--skin__negative__disabled:(
-  opacity: 0.6,
-  cursor: default,
+  hover-state:(
+    background-color: $btn--negative__color2,
+  );
+  active-state:(
+    background-color: tint($btn--negative__color2, 10%),
+  );
+  disabled-state:(
+    opacity: 0.6,
+    cursor: default,
+  );    
 );
 
 /**
  * Secondary Button Skin Styles
  */
 $btn--skin__secondary:(
-  background-color: $btn__secondary--color1,
+  background-color: $btn--secondary__color1,
   color: $white,
   border: 1px solid $strong,
-);// hover state styles
-$btn--skin__secondary__hover:(
-  background-color: $btn__secondary--color2;,
-);// active state styles
-$btn--skin__secondary__active:(
-  background-color: tint($btn__secondary--color2, 10%),
-);// disabled state styles
-$btn--skin__secondary__disabled:(
-  opacity: 0.6,
-  cursor: default,
+  hover-state:(
+    background-color: $btn--secondary__coo2,
+  );
+  active-state:(
+    background-color: tint($btn--secondary__color2, 10%),
+  );
+  disabled-state:(
+    opacity: 0.6,
+    cursor: default,
+  );
 );
 
