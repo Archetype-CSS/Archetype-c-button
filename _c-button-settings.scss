@@ -1,0 +1,180 @@
+/*** @export "button-structure" css */
+
+// enable/disable button structures
+$btnSmall: true;
+$btnMedium: true;
+$btnLarge: true;
+$btnTouch: true;
+// enable/disable button skins
+$btnDefault: true;
+$btnPositive: true;
+$btnNegative: true;
+$btnPrimary: true;
+$btnSecondary: true;
+
+/**
+ * Button Structure
+ *
+ * Extends button object
+ *
+ * 6. Normalise box model styles.
+ * 7. If the button’s text is 1em, and the button is (3 * font-size) tall, then
+ *    there is 1em of space above and below that text. We therefore apply 1em
+ *    of space to the left and right, as padding, to keep consistent spacing.
+ * 8. Basic cosmetics for default buttons. Change or override at will.
+ */
+
+/**
+ * Small Button 
+ */
+$btn--structure__small:(
+  font-size: ($base-font-size - 4px),
+  padding: 2px 6px,       /* 6 */
+  line-height: $base-line-height,     /* 7 */
+  margin: 0,        /* 6 */
+  border-radius: 3px,     /* 8 */
+);
+
+/**
+ * Medium Button 
+ */
+$btn--structure__medium:(
+  font-size: ($base-font-size - 2px),
+  padding: 5px 9px,         /* 6 */
+  line-height: $base-line-height,       /* 7 */
+  margin: 5px,        /* 6 */
+  border-radius: 5px,     /* 8 */
+);
+
+/**
+ * Large Button 
+ */
+$btn--structure__large:(
+  font-size: ($base-font-size + 2px),
+  padding: 9px 14px,    /* 6 */
+  line-height: $base-line-height,   /* 7 */
+  margin: 5px,        /* 6 */
+  border-radius: 7px,   /*8 */
+);
+
+/**
+ * Full Button
+ *
+ * override default prototype structure with custom structure styles
+ * full screen, block level button style for small screens 
+ */
+$btn--structure__touch:(
+  display: block,
+  width: 100%,
+  padding-left: 0,
+  padding-right: 0,
+);
+
+
+/*** @export "button-skin" css */
+/**
+ * Button Skin
+ *
+ */
+
+/* Default Button Skin */
+$btn--default__color1:                #B3B3B3 !default;
+$btn--default__color2:                darken($btn--default__color1, 10%) !default;
+/* Positive Button Skin */
+$btn--positive__color1:               #5B8737 !default;
+$btn--positive__color2:               darken($btn--positive__color1, 10%) !default;
+/* Negative Button Skin */
+$btn--negative__color1:               #E91C21 !default;
+$btn--negative__color2:               darken($btn--negative__color1, 10%) !default;
+/* Secondary Button Skin */
+$btn--secondary__color1:              white(10%) !default;
+$btn--secondary__color2:              darken($btn--secondary__color1, 10%) !default;
+
+
+$btn--skin:(
+  default:(
+  
+  );
+);
+
+/**
+ * Default Button Skin
+ *
+ * override default prototype skin with custom skin styles
+ */
+
+$btn--skin__default:(
+  background-color: $btn--default__color1,
+  color: $white,
+  border: 1px solid $strong,
+  hover-state:(
+    background-color: $btn--default__color2,
+  );
+  active-state:(
+    background-color: tint($btn--default__color2, 10%),
+  );
+  disabled-state:(
+    opacity: 0.6,
+    cursor: default,
+  );
+);
+
+
+/**
+ * Positive Button Skin
+ */
+$btn--skin__positive:(
+  background-color: $btn--positive__color1,
+  color: $white,
+  border: 1px solid $strong,
+  hover-state:(    
+    background-color: $btn--positive__color2,
+  );
+  active-state:(
+    background-color: tint($btn--positive__color2, 10%),
+  );
+  disabled-state:(
+    opacity: 0.6,
+    cursor: default,
+  );
+);
+
+
+/**
+ * Negative Button Skin
+ */
+$btn--skin__negative:(
+  background-color: $btn--negative__color1,
+  color: $white,
+  border: 1px solid $strong,
+  hover-state:(
+    background-color: $btn--negative__color2,
+  );
+  active-state:(
+    background-color: tint($btn--negative__color2, 10%),
+  );
+  disabled-state:(
+    opacity: 0.6,
+    cursor: default,
+  );    
+);
+
+/**
+ * Secondary Button Skin Styles
+ */
+$btn--skin__secondary:(
+  background-color: $btn--secondary__color1,
+  color: $white,
+  border: 1px solid $strong,
+  hover-state:(
+    background-color: $btn--secondary__coo2,
+  );
+  active-state:(
+    background-color: tint($btn--secondary__color2, 10%),
+  );
+  disabled-state:(
+    opacity: 0.6,
+    cursor: default,
+  );
+);
+
